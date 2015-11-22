@@ -12,12 +12,10 @@ makeCacheMatrix <- function(x = matrix()) {
   # outside environment. 
   
 
-    
-    
     xinv <- NULL # this is where the result of inversion is stored
-    # A setter function, use this to set a matrix to object created by makeCacheMatrix function
-    # e.g makeCacheMatrix(testmatrix) # here we work on testmatrix
-    # makeCacheMatrix$set(testmatrix1) # here we work on testmatrix1
+      # A setter function, use this to set a matrix to object created by makeCacheMatrix function
+      # e.g makeCacheMatrix(testmatrix) # here we work on testmatrix
+      # makeCacheMatrix$set(testmatrix1) # here we work on testmatrix1
     
     set <- function(y) {
       x <<- y
@@ -28,13 +26,13 @@ makeCacheMatrix <- function(x = matrix()) {
     setInv <- function(inv) xinv <<- inv # set the inversed matrix
     getInv <- function() xinv # return the inversed matrix
     
-    # return a list that contains these functions, so that we can use
-    # makeCacheMatrix object like these
-    # x <- makeCacheMatrix(testmatrix)
-    # x$set(newmatrix) # to change matrix
-    # x$get # to get the setted matrix
-    # x$setInv # to set the inversed matrix
-    # x$getInv # to get the inversed matrix
+      # return a list that contains these functions, so that we can use
+      # makeCacheMatrix object like these
+          # x <- makeCacheMatrix(testmatrix)
+          # x$set(newmatrix) # to change matrix
+          # x$get # to get the setted matrix
+          # x$setInv # to set the inversed matrix
+          # x$getInv # to get the inversed matrix
     
     list(set = set, get = get,
          setInv = setInv,
@@ -50,7 +48,7 @@ cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
 
   m <- x$getInv() # get the inversed matrix from object x
-  # it will be null if uncalculated, remember the first line "xinv <- NULL" in the previous function
+        # it will be null if uncalculated, remember the first line "xinv <- NULL" in the previous function
   if(!is.null(m)) { # if the inversion result is there
     message("getting cached data")
     return(m) # return the calculated inversion
