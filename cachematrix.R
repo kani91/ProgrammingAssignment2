@@ -11,7 +11,7 @@ makeCacheMatrix <- function(x = matrix()) {
   # these internal variables are not exposed to the
   # outside environment. 
   
-  makeCacheMatrix <- function(x = matrix()) {
+
     
     
     xinv <- NULL # this is where the result of inversion is stored
